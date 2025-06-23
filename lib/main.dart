@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
             "Reminders",
             style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold), textAlign: TextAlign.center,
           ),
-          SizedBox(height: 32),
+          SizedBox(height: 35),
           _iconos(
             icon: Icons.flag,
             titulo: 'Quick Creation',
@@ -96,9 +96,10 @@ class HomePage extends StatelessWidget {
     required String titulo,
     required String texto,
     required Color color,
+    Color? textoColor,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40.0), // Padding para las filas
+      padding: const EdgeInsets.symmetric(horizontal: 45.0), // Padding para las filas
       child: Row(
         children: <Widget>[
           Icon(icon, size: 35,color: color,),
@@ -109,11 +110,16 @@ class HomePage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   titulo,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.bold),
                 ),
                 Text(
                   texto,
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    color : textoColor ?? Colors.grey[600],),
                   ),
               ],
             ),
